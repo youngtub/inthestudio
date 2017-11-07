@@ -1,0 +1,37 @@
+{
+  "name": "inthestudio",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "antd": "^2.13.8",
+    "axios": "^0.17.0",
+    "body-parser": "^1.18.2",
+    "d3": "^4.11.0",
+    "express": "^4.16.2",
+    "express-graphql": "^0.6.11",
+    "fs": "0.0.1-security",
+    "graceful-fs": "^4.1.11",
+    "graphql": "^0.11.7",
+    "graphql-errors": "^2.1.0",
+    "i": "^0.3.6",
+    "jquery": "^3.2.1",
+    "jsonfile": "^4.0.0",
+    "npm": "^5.5.1",
+    "path": "^0.12.7",
+    "react": "^16.0.0",
+    "react-autosuggest": "^9.3.2",
+    "react-bootstrap": "^0.31.5",
+    "react-dom": "^16.0.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.0.14",
+    "react-scrollable-anchor": "^0.5.0",
+    "svgjs": "^2.6.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "proxy": "http://localhost:3000"
+}

@@ -188,7 +188,7 @@ const button = {
 const settingsContainer = {
   border: 'solid black 1px',
   zIndex: 200,
-  marginTop: '70%',
+  marginTop: '15%',
   marginLeft: '3%',
   width: '20vw',
   borderRadius: '10px',

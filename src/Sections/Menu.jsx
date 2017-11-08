@@ -14,6 +14,7 @@ class MenuBar extends React.Component {
   toggleCollapsed = () => {
     this.setState({
       collapsed: !this.state.collapsed,
+      showSettings: !this.state.showSettings
     });
   }
 
@@ -21,6 +22,12 @@ class MenuBar extends React.Component {
     this.setState({
       showSettings: !this.state.showSettings
     })
+  }
+
+  menuWidth = () => {
+    var width;
+    this.state.collapsed ? width = '4vw' : width = '8vw';
+    return {width}
   }
 
   render() {
@@ -35,7 +42,7 @@ class MenuBar extends React.Component {
           mode="inline"
           theme="dark"
           inlineCollapsed={this.state.collapsed}
-          style={menuStyle}
+          style={this.menuWidth()}
         >
         <Menu.Item key="0">
           <a href='#main'>
@@ -61,31 +68,30 @@ class MenuBar extends React.Component {
           </Menu.Item>
         </Menu>
         </Row>
+
+        <Row>
+          <Button type="primary" onClick={this.toggleCollapsed} style={expandButtonStyle}>
+            <Icon type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'} />
+          </Button>
+        </Row>
+
         {this.state.showSettings ? (
           <Row>
             <Settings passStateInSettings={this.props.passStateInSettings}/>
           </Row>
         ) : '' }
 
-        {<Button type="primary" onClick={this.toggleCollapsed} style={expandButtonStyle}>
-          <Icon type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'} />
-        </Button>}
-
       </div>
     );
   }
 }
 
-const menuStyle = {
-  position: 'fixed'
-  // width: '5vw'
-}
-
 const expandButtonStyle = {
-  marginTop: '10%',
-  marginLeft: '1%',
+  // marginTop: '10%',
+  // marginLeft: '1%',
   position: 'fixed',
-  display: 'none'
+  float: 'left'
+  // display: 'none'
 }
 
 export default MenuBar;

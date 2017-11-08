@@ -43,6 +43,7 @@ class MenuBar extends React.Component {
           theme="dark"
           inlineCollapsed={this.state.collapsed}
           style={this.menuWidth()}
+          id='sidemenu'
         >
         <Menu.Item key="0">
           <a href='#main'>
@@ -70,7 +71,7 @@ class MenuBar extends React.Component {
         </Row>
 
         <Row>
-          <Button type="primary" onClick={this.toggleCollapsed} style={expandButtonStyle}>
+          <Button type="primary" id='expand' onClick={this.toggleCollapsed} style={expandButtonStyle}>
             <Icon type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'} />
           </Button>
         </Row>
@@ -87,10 +88,10 @@ class MenuBar extends React.Component {
 }
 
 const expandButtonStyle = {
-  // marginTop: '10%',
+  marginTop: '10%'
   // marginLeft: '1%',
-  position: 'fixed',
-  float: 'left'
+  // position: 'fixed'
+  // float: 'left'
   // display: 'none'
 }
 

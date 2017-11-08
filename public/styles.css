@@ -41,7 +41,7 @@ body p {
     /*opacity: 0.5;*/
 }
 
-#sidemenu {
+#sidemenu, #expand {
   position: fixed;
 }
 

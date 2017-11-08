@@ -14,13 +14,9 @@ const About = (props) => {
       <li>By starting with all artists and narrowing down the scope (top-down) </li>
       <li>Starting with one artist, and building it up from there (ground-up)</li>
     </ul>*/}
-      <br/>
-      <p>More data coming soon!</p>
-      <p>Feel free to mess around with the settings</p>
-      <br/>
-      <p> Also...</p>
-      <p>Check out our proprietary <i>Surch</i>! It helps you to build up an aggregate search composed of multiple searches</p>
-      <p>Click 'Demo' in the purple container above to try it out</p>
+      <p>More data coming soon...</p><br/>
+      <p>Feel free to mess around with the Settings, and check out our proprietary <i>Surch</i>! It helps you to build up an aggregate search composed of multiple searches.</p>
+      <p>Click 'Demo' in the purple container above to try it out!</p>
       <br/>
       {/*<Row>
         <Col md={4}></Col>

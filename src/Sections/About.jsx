@@ -17,12 +17,12 @@ const About = (props) => {
       <br/>
       <p>More data coming soon!</p>
       <p>Feel free to mess around with the settings</p>
-      <p>(Working on sorting by Time and filtering by Location/Group)</p>
       <br/>
       <p> Also...</p>
-      <p>Check out our proprietary <i>Surch</i>! It helps you to build up an aggregate search composed of multiple search queries</p>
+      <p>Check out our proprietary <i>Surch</i>! It helps you to build up an aggregate search composed of multiple searches</p>
+      <p>Click 'Demo' in the purple container above to try it out</p>
       <br/>
-      <Row>
+      {/*<Row>
         <Col md={4}></Col>
         <Col md={2}>
           <img src='https://drive.google.com/uc?id=0BxlVLOVlVGhdWllPTTFJMEQ3cWs' height={200} width={200}></img>
@@ -31,11 +31,11 @@ const About = (props) => {
           <img src='https://drive.google.com/uc?id=0BxlVLOVlVGhdWmlCMFdJd2Y4Nnc' height={200} width={200}></img>
         </Col>
         <Col md={4}></Col>
-      </Row>
-      <br/><br/>
-     <p>Of course, there are far too many rap artists to display, so I've started off with some of my favourite current artists.
+      </Row>*/}
+      <br/>
+     <p>Of course, there are far too many artists to display, so I've started off with some of my favourite current artists.
        Please
-       <a href='#contribute'>add suggestions</a> of who should be included!
+       <a href='#contribute'> add suggestions </a> of who should be included!
      </p>
 
      <br/>

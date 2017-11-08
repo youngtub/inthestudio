@@ -22,12 +22,12 @@ body p {
 }
 
 @font-face {
-  font-family: 'Smaragd-Alternate';
-  src: url("Smaragd-Alternate.otf") format("opentype");
+  font-family: 'Smaragd';
+  src: url("Smaragd.ttf") format("opentype");
 }
 
 .Balmain {
-  font-family: 'Smaragd-Alternate';
+  font-family: 'Smaragd';
   font-size: 40px;
 }
 

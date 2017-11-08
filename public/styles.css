@@ -26,6 +26,11 @@ body p {
   grid-template-columns: 75% 25%;
 }*/
 
+.settingsContainer {
+    background-color: rgba(197, 199, 201, 0.35);
+    /*opacity: 0.5;*/
+}
+
 #infoPanel {
   /*grid-column: 2;*/
   height: 60vh;

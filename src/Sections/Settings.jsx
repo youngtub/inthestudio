@@ -80,7 +80,7 @@ class Settings extends React.Component {
 
   render() {
     return (
-      <Grid style={settingsContainer}>
+      <Grid style={settingsContainer} className='settingsContainer'>
         <Row>
           <br/>
           <h3>Settings</h3>
@@ -99,7 +99,7 @@ class Settings extends React.Component {
           <br/><hr/><br/>
 
         <Row>
-          <Col md={1} style={settingTypeStyle}>
+          <Col md={2} style={settingTypeStyle}>
             <p>Include: </p>
           </Col>
           <Col md={9}>

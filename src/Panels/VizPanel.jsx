@@ -191,6 +191,7 @@ if (label === 'image') {
       console.log('ARTIST', artist)
 
       // $(`.${artist.split(' ').join('')}`).css('display', 'inline');
+      $('.link').css('display', 'none')
       $(`.${artist.split(' ').join('')}.link`).toggle();
 
       this.setState({

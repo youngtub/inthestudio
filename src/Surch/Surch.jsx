@@ -1,6 +1,6 @@
 import React from 'react';
 import Autosuggest from './Autosuggest';
-import {Tag} from 'antd';
+import {Tag, Button} from 'antd';
 import 'antd/dist/antd.css';
 import {Row, Col} from 'react-bootstrap';
 
@@ -13,6 +13,8 @@ class Surch extends React.Component {
     }
     this.surchArtists = this.surchArtists.bind(this);
     this.removeArtist = this.removeArtist.bind(this);
+    this.resetSurch = this.resetSurch.bind(this);
+    this.demoSurch = this.demoSurch.bind(this);
   }
 
   componentWillMount() {
@@ -40,14 +42,36 @@ class Surch extends React.Component {
     })
   }
 
+  resetSurch() {
+    this.setState({
+      surchedArtists: []
+    }, this.props.reset)
+  };
+
+  demoSurch() {
+    this.setState({
+      surchedArtists: ['Drake', 'Future', 'Metro Boomin', 'Offset', '21 Savage']
+    }, () => {
+      this.props.applySurchCb(this.state.surchedArtists)
+    })
+  }
+
   render() {
     return (
       <div id='surchContainer'>
         <div id='autosuggest' style={surchStyle}>
-          <Autosuggest allArtists={this.props.allArtists} SurchCb={this.surchArtists} />
+          <Row>
+            <Col md={8}>
+              <Autosuggest allArtists={this.props.allArtists} SurchCb={this.surchArtists} style={autosuggestStyle}/>
+            </Col>
+            <Col md={4} style={surchButtons}>
+              <Button onClick={this.demoSurch}>Demo</Button>
+              <Button onClick={this.resetSurch}> Reset</Button>
+            </Col>
+          </Row>
         </div>
-        <br/><br/>
-
+        <br/>
+        <Row>
         <Col md={4}>
           {
             this.state.surchedArtists.slice(0, 5).map((artist, i) => (
@@ -61,7 +85,7 @@ class Surch extends React.Component {
           }
         </Col>
 
-        <Col md={4}>
+        <Col md={4} style={surchStyle}>
           {
             this.state.surchedArtists.slice(5, 10).map((artist, i) => (
               <div style={surchStyle}>
@@ -75,12 +99,21 @@ class Surch extends React.Component {
         </Col>
 
         <Col md={4}></Col>
+        </Row>
         <br/>
       </div>
     )
   }
 
 };
+
+const surchButtons = {
+  // marginLeft: '3%'
+}
+
+const autosuggestStyle = {
+  width: '70%'
+}
 
 const surchStyle = {
   // padding: '10px',
@@ -92,6 +125,7 @@ const tagStyle = {
   // height: '5vh',
   // width: '7vw',
   // fontSize: '12px'
+  marginLeft: '4%'
 }
 
 export default Surch;

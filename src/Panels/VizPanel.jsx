@@ -23,6 +23,7 @@ class VizPanel extends React.Component {
     this.generateCharts = this.generateCharts.bind(this);
     this.applySurchCb = this.applySurchCb.bind(this);
     this.infoPanelCallback = this.infoPanelCallback.bind(this);
+    this.resetSurchCb = this.resetSurchCb.bind(this);
   }
 
   componentDidMount() {
@@ -236,6 +237,15 @@ if (label === 'image') {
       console.log('state in viz panel', this.state)
       this.generateCharts()
     })
+  };
+
+  resetSurchCb() {
+    this.setState({
+      artists: this.state.artistsLibrary,
+      links: this.state.linksLibrary
+    }, () => {
+      this.generateCharts();
+    })
   }
 
   infoPanelCallback(name) {
@@ -274,7 +284,7 @@ if (label === 'image') {
               </Row>
 
               <Row className="show-grid">
-                  <Surch allArtists={this.state.artistsLibrary} applySurchCb={this.applySurchCb}/>
+                  <Surch allArtists={this.state.artistsLibrary} applySurchCb={this.applySurchCb} reset={this.resetSurchCb}/>
               </Row>
 
             </Col>

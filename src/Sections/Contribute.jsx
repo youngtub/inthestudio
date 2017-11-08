@@ -34,7 +34,7 @@ class Contribute extends React.Component {
       let newCastVotes = this.state.castVotes;
       newCastVotes[name] = true;
       this.setState({
-        suggestedArtists: newArr,
+        suggestedArtists: newArr.sort((a, b) => b.count - a.count),
         castVotes: newCastVotes
       })
     }

@@ -78,15 +78,30 @@ class App extends Component {
         <ScrollableAnchor id={'contribute'}>
         <Row>
           <Contribute />
-          <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
         </Row>
         </ScrollableAnchor>
 
+        <Row>
+          <Col md={12} style={surfStyle}>
+            <div style={surfStyle}>
+              {/*<a style={black}> Powered by </a>*/}
+              <h2 className='Balmain'> Surf </h2>
+              </div>
+              </Col>
+            </Row>
         </Grid>
-        <br/><br/><br/><br/><br/><br/><br/>
       </div>
     );
   }
+}
+
+const surfStyle = {
+  float: 'right',
+  backgroundColor: '#dbdde0'
+}
+
+const black = {
+  color: 'black'
 }
 
 const menuStyle = {

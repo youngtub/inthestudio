@@ -37,6 +37,9 @@ const About = (props) => {
        Please
        <a href='#contribute'>add suggestions</a> of who should be included!
      </p>
+
+     <br/>
+
      </div>
   )
 };

@@ -78,10 +78,11 @@ class MenuBar extends React.Component {
 
 const menuStyle = {
   position: 'fixed'
+  // width: '5vw'
 }
 
 const expandButtonStyle = {
-  marginTop: '8%',
+  marginTop: '10%',
   marginLeft: '1%',
   position: 'fixed',
   display: 'none'

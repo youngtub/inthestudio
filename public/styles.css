@@ -28,6 +28,7 @@ body p {
 
 .Balmain {
   font-family: 'Smaragd-Alternate';
+  font-size: 40px;
 }
 
 /*#container {
@@ -50,7 +51,7 @@ body p {
   /*display: grid;*/
   /*grid-template-columns: 50% 50%;*/
   /*grid-template-rows: 5% 20% 5% 30%;*/
-  background-color:#b2b8c4;
+  background-color: rgba(192, 197, 206, 0.5)
 }
 
 #surchContainer {
@@ -58,7 +59,7 @@ body p {
   /*width: 25%;*/
   border: solid grey 1px;
   border-radius: 10px;
-  background-color:#6f5c82;
+  background-color: rgba(111, 92, 130, 0.6);
   /*position: absolute;
   top: 60%;
   right: 0%;*/

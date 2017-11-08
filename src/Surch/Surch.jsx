@@ -50,7 +50,7 @@ class Surch extends React.Component {
 
   demoSurch() {
     this.setState({
-      surchedArtists: ['Drake', 'Future', 'Metro Boomin', 'Offset', '21 Savage']
+      surchedArtists: ['Drake', 'Future', 'Metro Boomin', 'Offset']
     }, () => {
       this.props.applySurchCb(this.state.surchedArtists)
     })

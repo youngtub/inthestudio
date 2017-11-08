@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid, Row, Col, ListGroup, ListGroupItem } from 'react-bootstrap';
-import {Icon} from 'antd';
+import {Icon, Input} from 'antd';
 
 class Contribute extends React.Component {
   constructor(props) {
@@ -8,10 +8,13 @@ class Contribute extends React.Component {
     this.state = {
       suggestedArtists: [],
       comments: [],
-      castVotes: {}
+      castVotes: {},
+      inputValue: ''
     }
     this.handleUpvote = this.handleUpvote.bind(this);
     this.calcLike = this.calcLike.bind(this);
+    this.addArtist = this.addArtist.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
   }
 
   componentDidMount() {
@@ -41,6 +44,26 @@ class Contribute extends React.Component {
     let castVotesArr = Object.keys(this.state.castVotes);
     if (castVotesArr.includes(name)) return 'like'
     return 'like-o'
+  }
+
+  addArtist() {
+    var newArr = this.state.suggestedArtists;
+    let newName = this.state.inputValue.slice(0,1).toUpperCase() + this.state.inputValue.slice(1)
+    let newObj = {
+      name: newName,
+      count: 0
+    }
+    newArr.push(newObj);
+    this.setState({
+      suggestedArtists: newArr,
+      inputValue: ''
+    })
+  }
+
+  handleInputChange(e) {
+    this.setState({
+      inputValue: e.target.value
+    })
   }
 
 
@@ -77,6 +100,15 @@ class Contribute extends React.Component {
               ))}
             </ListGroup>
 
+              <Row style={inputStyle}>
+                <Col md={10}>
+                  <Input placeholder='Add artist' value={this.state.inputValue} onChange={this.handleInputChange}/>
+                </Col>
+                <Col md={2}>
+                  <Icon type='plus-circle-o' style={{ fontSize: '30px'}} onClick={this.addArtist}/>
+                </Col>
+              </Row>
+              <br/><br/>
             </Col>
             </Row>
           </Col>
@@ -93,6 +125,11 @@ class Contribute extends React.Component {
 const artistListEntry = {
   height: '5vh',
   width: '20vw'
+}
+
+const inputStyle = {
+  width: '20vw',
+  textAlign: 'center'
 }
 
 const centered = {

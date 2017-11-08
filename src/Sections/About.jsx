@@ -9,14 +9,15 @@ const About = (props) => {
     <br/>
     <h5>InTheStudio is an interactive visualization of collaborations between rappers and producers</h5>
     <br/>
-    <p> You can approach it in 2 ways: </p>
+    {/*<p> You can approach it in 2 ways: </p>
     <ul>
       <li>By starting with all artists and narrowing down the scope (top-down) </li>
       <li>Starting with one artist, and building it up from there (ground-up)</li>
-    </ul>
+    </ul>*/}
       <br/>
       <p>More data coming soon!</p>
-      <p>Currently working on sorting by Time and filtering by Location/Group</p>
+      <p>Feel free to mess around with the settings</p>
+      <p>(Working on sorting by Time and filtering by Location/Group)</p>
       <br/>
       <p> Also...</p>
       <p>Check out our proprietary <i>Surch</i>! It helps you to build up an aggregate search composed of multiple search queries</p>

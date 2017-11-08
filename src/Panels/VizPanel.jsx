@@ -63,7 +63,7 @@ class VizPanel extends React.Component {
     var roles = this.props.settings.roles || ['rapper', 'producer'];
     var label = this.props.settings.label || 'text';
 
-    var limitedArtists = this.state.artistsLibrary.filter((artist, i) => {
+    var limitedArtists = this.state.artists.filter((artist, i) => {
       return i < artistNum && roles.includes(artist.role);
     })
 

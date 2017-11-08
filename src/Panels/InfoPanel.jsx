@@ -145,7 +145,7 @@ const InfoPanel = (props) => {
 
     {props.display === '' ? (
       <Col md={12}>
-        <img src='https://drive.google.com/uc?id=1bEsmi0UXdfDE0awAY5O0u6U1bB3v0lZK' height={275} width={350}></img>
+        <img src='https://drive.google.com/uc?id=1bEsmi0UXdfDE0awAY5O0u6U1bB3v0lZK' height={230} width={300}></img>
         <br/><br/><br/>
         <p>Click on an Artist or Link to learn more</p>
       </Col>

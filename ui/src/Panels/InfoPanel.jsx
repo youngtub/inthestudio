@@ -60,7 +60,7 @@ const InfoPanel = (props) => {
           <h4 style={centered}> Songs </h4>
           <br/>
 
-          <ListGroup>
+          <ListGroup style={songsDisplay}>
             {props.songs.map((song, i) => (
               <ListGroupItem key={i}>
                 {song.title}
@@ -128,7 +128,7 @@ const InfoPanel = (props) => {
           <br/>
           <Col md={3}></Col>
           <Col md={6}>
-          <ListGroup>
+          <ListGroup style={songsDisplay}>
           {props.songs.map((song, i) => (
             <ListGroupItem key={i}>
               {song.title}
@@ -154,6 +154,11 @@ const InfoPanel = (props) => {
     </div>
   )
 };
+
+const songsDisplay = {
+  height: '25vh',
+  overflow: 'scroll'
+}
 
 const centered = {
   textAlign: "center",

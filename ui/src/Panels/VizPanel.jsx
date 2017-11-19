@@ -129,7 +129,13 @@ class VizPanel extends React.Component {
           selectedLink: d,
           songs: songsArr
         })
-      });
+      })
+      .on('mouseover', d => {
+        this.setState({
+          selectedLink: d,
+          display: 'link'
+        })
+      })
 
 var node = svg.selectAll(".node").data(limitedArtists).enter()
     .append("g").attr("class", "node")
@@ -163,13 +169,22 @@ function dragended() {
 // .attr('height', 24)
 // .attr("xlink:href", "resources/images/check.png")
 
-
+var colors = {
+  0: '#424874',
+  1: '#6D435A',
+  2: '#84BCDA',
+  3: '#0C6291',
+  4: '#5C6672',
+  5: '#3A435E',
+  6: '#5D5179',
+  7: '#75B9BE'
+}
 
 if (label === 'image') {
 
   node.append("circle")
       .attr("r", circleSize*2.3)
-      .attr("fill", function(d) { return d.role === 'rapper' ? '#241587' : '#3f88a3' })
+      .attr("fill", function(d) { return d.role === 'rapper' ? '#6D435A' : '#424874' })
       .attr("class", (d) => `${d.role} ${d.name} node`);
 
   node.append("svg:image")
@@ -181,12 +196,12 @@ if (label === 'image') {
       .attr("xlink:href", (d) => `${d.thumbnail}`)
 } else {
   node.append("circle")
-      .attr("r", circleSize)
-      .attr("fill", function(d) { return d.role === 'rapper' ? '#241587' : '#3f88a3' })
+      .attr("r", d => circleSize*2*(Math.max(Object.keys(d.collabs).length, 1)/3) )
+      .attr("fill", function(d) { return d.role === 'rapper' ? '#6D435A' : '#424874' })
       .attr("class", (d) => `${d.role} ${d.name} node`);
 
   node.append("text")
-      .attr("dx", 15).attr("dy", ".70em")
+      .attr("dx", d => circleSize*2*(Math.max(Object.keys(d.collabs).length, 1)/3)).attr("dy", ".70em")
       .text(function(d) { return d.name })
       .style("font-size", "14px")
       .attr("class", (d) => `${d.role} ${d.name}`)
@@ -217,7 +232,13 @@ if (label === 'image') {
         console.log('artist in state', this.state.selectedArtist)
         // this.generateCharts();
       })
-    });
+    })
+    .on('mouseover', d => {
+      this.setState({
+        selectedArtist: d,
+        display: 'artist'
+      })
+    })
 
       nodes.on("tick", function() {
         link.attr("x1", function(d) { return d.source.x; })
